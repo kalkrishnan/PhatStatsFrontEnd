@@ -88,20 +88,14 @@ function loadResults()
 
 														console.log("after getting players");
 														console.log(data);
-														var espnplayers = data["players"];
+														var espnplayers = data["Players"];
+														//console.log(espnplayers);
 														$.each(espnplayers, function (_, player) {
-														console.log(player);
-														var res = player["sports"][0]["leagues"][0]["athletes"];
-														$.each(res, function (_, value) {
-															   link=value["links"]["web"]["athletes"]["href"]
-															   console.log("in players");
-															   console.log(link);
-															   name=value["fullName"];
-
-
-																	players[name]=link;
+															console.log("iterating over players");
+															link="http://www.nfl.com"
+															name=player["displayName"];
+															players[name]=link;
 																																	
-																	});
 														});
 													}, 
 													function (error) {
