@@ -18,6 +18,13 @@ font: 14px/1.6 'Helvetica Neue', Helvetica, Arial, sans-serif;
     padding-top: 20px;
     padding-bottom: 20px;
 }
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 55%;
+  margin-top: -50px;
+  margin-left: -50px;
+}
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -157,7 +164,7 @@ input:-moz-placeholder {
 }
 
 .search-form {
-    margin-top: 20px;
+    margin-top: 30px;
     position: absolute;
     display: inline-block;
     zoom: 1; /* ie7 hack for display:inline-block */
@@ -183,8 +190,8 @@ input:-moz-placeholder {
 }
 
 .search-input {
-    width: 100px;
-    height: 30px;
+    width: 200px;
+    height: 50px;
     padding: 6px 10px 6px 35px;
     font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #ccc;

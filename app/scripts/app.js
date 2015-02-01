@@ -1,4 +1,6 @@
 angular.module('PhatStatsApp', [
   'PhatStatsApp.controllers',
-  'PhatStatsApp.services'
+  'PhatStatsApp.services' ,
+  'sportsTicker',
+  'sportsTickerDemo'
 ]);

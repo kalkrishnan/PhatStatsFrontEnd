@@ -17,110 +17,82 @@
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
-<link rel="stylesheet" href="../styles/bootstrap.min.css">
-    <link rel="stylesheet" href="../styles/bootstrap-responsive.min.css">
+		<link rel="stylesheet" href="../styles/bootstrap.min.css">
+		<link rel="stylesheet" href="../styles/bootstrap-responsive.min.css">
+		<link rel="stylesheet" href="../styles/sportsticker.css">
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/modernizr/modernizr.js"></script>
+		<script src="../scripts/sportsTickerModule.js"></script>
+		<script src="../scripts/prefix-free-min.js"></script>
+		<script src="../scripts/sportsTickerDemo.js"></script>
+        <script src="../scripts/prefix-free-dynamic-dom-min.js"></script>
         <!-- endbuild -->
-	<meta charset="utf-8">
-  <title>jQuery UI Menu - Default functionality</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-  <script src="scripts/jquery-1.10.2.min.js"></script>
-  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-  <script src="../scripts/jquery.easy-ticker.js"></script>
-    
-
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script>
-  $(function() {
-    $( "#menu" ).menu();
-  });
-  </script>
-  <style>
-  .ui-menu { width: 150px; }
-  </style>
+		<meta charset="utf-8">
+		
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+		<script src="scripts/jquery-1.10.2.min.js"></script>
+		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<script src="../scripts/jquery.easy-ticker.js"></script>
+		<link rel="stylesheet" href="/resources/demos/style.css">
+		  <script>
+		  $(function() {
+			$( "#menu" ).menu();
+		  });
+		  </script>
+		  <style>
+		  .ui-menu { width: 150px; }
+		  </style>
     </head>
-<script type="text/javascript">
-function downloadJSAtOnload() {
-var element = document.createElement("script");
-element.src = "../scripts/autocomplete_parallel.js";
-document.body.appendChild(element);
-}
-if (window.addEventListener)
-window.addEventListener("load", downloadJSAtOnload, false);
-else if (window.attachEvent)
-window.attachEvent("onload", downloadJSAtOnload);
-else window.onload = downloadJSAtOnload;
-</script>
+
     <body ng-app="PhatStatsApp" ng-controller="phatStatsController">
+        <div class="centered">
+         
+                <ul class="nav nav-pills pull-center">
+					 <form action="" class="search-form frame inbtn rlarge">
+						<input type="text" id="textInput" ng-model="keywords" ng-keyup="search()"  class="search-input" placeholder="Search..." />
+						<ul id="results" ng-show="keywords" ng-if="keywords.length > 2" ng-repeat="player in playersList | filter: searchFilter "><li><a href='http://www.nfl.com'>{{player.displayName}}&nbsp;{{player.position}}&nbsp;{{player.team}}</a></li></ul>      
+					</form> 
+			    </ul>
+
+		</div>
+		<div  align=left>
+            <h1  style="margin: 5px;">PhatStats!  </h1>
+			<p class="lead">One Stop Portal for your Fantasy Info!
+				<ul id="menu-css">  
+					<li bgcolor="#3c3c3c"><a href="frontpage.html">Enter!</a></li>  
 	
-        <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+				</ul>
+			</p>
+
+	    </div>
+		 <!--sportsticker directive-->
+        <div ng-app="sportsTickerDemo" ng-controller="TickerFeedCtrl">
+            <sportsticker feed="feed" message-delay="4000" scroll-speed-factor="6.25"></sportsticker>
+        </div>
+		<!--div class="ticker1" id="outPopUp">
+			<div class="innerWrap"  >
+				<ul   id="news" > 
+			</div>
+		</div-->
 
 
-        <div class="container">
-            <div class="header">
-                <ul class="nav nav-pills pull-right">
-                   
- <form action="" class="search-form frame inbtn rlarge">
-   
-    <input type="text" id="textInput" ng-model="keywords" ng-keyup="search()"  class="search-input" placeholder="Search..." />
-     
-    <ul id="results" ng-show="keywords" ng-if="keywords.length > 2" ng-repeat="player in playersList | filter: searchFilter "><li><a href='http://www.nfl.com'>{{player.displayName}}</a></li></ul>      
-<script>
-
-        $("#button").click( function()
-           {
-             var elem = document.getElementById("results");
-		elem.parentNode.removeChild(elem);           }
-        );
-    </script>
-
-</div>
-     
-            
-        
-</form> 
-
-        
-                </ul>
-                
-            </div>
-
-
-
-            <div  align=left>
-                  <h1  style="margin: 5px;">PhatStats!  </h1>
-                <p class="lead">One Stop Portal for your Fantasy Info!
-	<ul id="menu-css">  
-    <li bgcolor="#3c3c3c"><a href="frontpage.html">Enter!</a></li>  
-    
-</ul>  </p>
-
-	          </div>
-<div class="ticker1" id="outPopUp">
-	<div class="innerWrap"  >
-		<ul   id="news" > 
-	</div>
-</div>
-
-
-<script>
-$('.ticker1').easyTicker({
-	direction: 'up',
-	easing: 'swing',
-	speed: 'slow',
-	interval: 20000,
-	visible: 20,
-	mousePause: 1,
-	controls: {
-		up: '',
-		down: '',
-		toggle: '',
-		playText: 'Play',
-		stopText: 'Stop'
-	}
-});
-</script>
+		<script>
+		$('.ticker1').easyTicker({
+			direction: 'up',
+			easing: 'swing',
+			speed: 'slow',
+			interval: 20000,
+			visible: 20,
+			mousePause: 1,
+			controls: {
+				up: '',
+				down: '',
+				toggle: '',
+				playText: 'Play',
+				stopText: 'Stop'
+			}	
+		});
+		</script>	
 	 
 
         
@@ -129,7 +101,6 @@ $('.ticker1').easyTicker({
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/es5-shim/es5-shim.js"></script>
-        <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/json3/lib/json3.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
         <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -167,26 +138,18 @@ $('.ticker1').easyTicker({
 		<script src="scripts/app.js"></script>
 		<script src="scripts/services.js"></script>
 		<script src="scripts/controllers.js"></script>
-        <!-- endbuild -->
+		<script src="scripts/main.js"></script>
+		<script src="scripts/newsticker.js"></script>
+		<script src="../scripts/jquery-1.10.2.min.js"></script>
+		<script src="../scripts/rx.js"></script>
+		<script src="../scripts/rx.experimental.js"></script>
+		<script src="../scripts/rx.experimental.min.js"></script>
+		<script src="../scripts/rx.lite.compat.min.js"></script>
+		<script src="../scripts/rx.lite.js"></script>
+		<script src="../scripts/rx.lite.min.js"></script>
+		<script src="../scripts/rx.min.js"></script>
+		<script src="../scripts/rx.lite.compat.js"></script>
 
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-	 <script src="scripts/newsticker.js"></script>
-	   <script src="../scripts/jquery-1.10.2.min.js"></script>
-<script src="../scripts/rx.js"></script>
-    <script src="../scripts/rx.experimental.js"></script>
-    <script src="../scripts/rx.experimental.min.js"></script>
-
- 
- <script src="../scripts/rx.lite.compat.min.js"></script>
- <script src="../scripts/rx.lite.js"></script>
-<script src="../scripts/rx.lite.min.js"></script>
-<script src="../scripts/rx.min.js"></script>
-
-
-    <script src="../scripts/rx.lite.compat.js"></script>
-
-    <script src=""></script>
     
         <!-- endbuild -->
 </body>
