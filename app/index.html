@@ -16,7 +16,10 @@
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
+		<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
         <link rel="stylesheet" href="styles/main.css">
+		<link rel="stylesheet" href="styles/app.css">
 		<link rel="stylesheet" href="../styles/bootstrap.min.css">
 		<link rel="stylesheet" href="../styles/bootstrap-responsive.min.css">
 		<link rel="stylesheet" href="../styles/sportsticker.css">
@@ -34,37 +37,115 @@
 		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 		<script src="../scripts/jquery.easy-ticker.js"></script>
 		<link rel="stylesheet" href="/resources/demos/style.css">
+		<link rel="stylesheet" href="../styles/foundation.css" />
+		<link rel="stylesheet" href="../styles/main.css">
+		<script src="../scripts/vendor/modernizr.js"></script>
 		  <script>
 		  $(function() {
 			$( "#menu" ).menu();
 		  });
 		  </script>
+		<script type="text/javascript">
+		//<![CDATA[
+		try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"026e9ba00e9a0c451ec64f50aff5a5a1",petok:"c455629dfaebd06dc6cd7397d59f909174a90329-1423619578-1800",zone:"fluidwebstudio.com",rocket:"0",apps:{"abetterbrowser":{"ie":"7"}}}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=919620257c/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+		//]]>
+		</script>
 		  <style>
 		  .ui-menu { width: 150px; }
 		  </style>
     </head>
 
     <body ng-app="PhatStatsApp" ng-controller="phatStatsController">
-        <div class="centered">
-         
-                <ul class="nav nav-pills pull-center">
+	
+	<div class="upper-wrap">
+    <header id="header">
+      <div class="row">
+      
+      </div>
+    </header>
+    <!-- End Header -->
+
+  <nav class="row hide-for-small">
+      <ul class="nav-bar">
+        <li>
+          <a class="on" href="index.php">Home</a>
+        </li>
+        <li>
+          <a  href="games.php">Games</a>
+        </li>
+        <li>
+          <a  href="concept-art.php">Concept Art</a>
+        </li>
+        <li>
+          <a  href="work-with-us.php">Work With Us</a>
+        </li> 
+        <li>
+          <a href="http://www.fluidwebstudio.com/stormsiege/cms/">Forum</a>
+        </li> 
+       
+      </ul>        
+      <div class="nav-border"></div>
+    </nav>
+
+	<!--ul class="small-block-grid-3">
+		<li></li>
+		<li><img src="images/ray_lewis.jpg" alt="image1"></li>
+  	</ul-->
+	
+	<div class="row">
+
+		<div class="large-3 columns">
+		<h1><img src="images/PhatStats.png"/></h1>
+		</div>
+	</div>
+	
+	<div class="row">
+
+		<div class="multiple-items">
+				<ul class="small-block-grid-3" align="center">
+					<li></li>
+					<li><img src="images/ray_lewis.jpg" alt="image1"></li>
+				</ul>
+				<ul class="small-block-grid-3">
+					<li></li>
+					<li><img src="images/afce_buffalo-only.png" alt="image1"></li>
+				</ul>
+				<ul class="small-block-grid-3">
+					<li></li>
+					<li><img src="images/afce_miami-only.png" alt="image1"></li>
+				</ul>
+				<ul class="small-block-grid-3">
+					<li></li>
+					<li><img src="images/afce_newengland-only.png" alt="image1"></li>
+				</ul>
+				<ul class="small-block-grid-3">
+					<li></li>
+					<li><img src="images/afce_newyorkjets-only.png" alt="image1"></li>
+				</ul>
+		</div>
+	</div>
+	
+	<div class="large-12 medium-4 columns">
+			<div class="row">
+	        	<div class="large-4 medium-4 small-centered columns">
+	    		 <ul class="nav nav-pills pull-center">
 					 <form action="" class="search-form frame inbtn rlarge">
 						<input type="text" id="textInput" ng-model="keywords" ng-keyup="search()"  class="search-input" placeholder="Search..." />
-						<ul id="results" ng-show="keywords" ng-if="keywords.length > 2" ng-repeat="player in playersList | filter: searchFilter "><li><a href='http://www.nfl.com'>{{player.displayName}}&nbsp;{{player.position}}&nbsp;{{player.team}}</a></li></ul>      
+						<ul id="results" ng-show="keywords" ng-if="keywords.length > 2" ng-repeat="player in playersList | filter: searchFilter " ng-cloak><li><a href='http://www.nfl.com'><font color="#16d6d6">{{ player.displayName }}&nbsp;{{ player.position }}&nbsp;{{ player.team }}</font></a></li></ul>      
 					</form> 
 			    </ul>
 
+				</div>
+	        	 
+			</div>
+      	
+     
+    </div>
+        <div class="centered">
+         
+               
 		</div>
-		<div  align=left>
-            <h1  style="margin: 5px;">PhatStats!  </h1>
-			<p class="lead">One Stop Portal for your Fantasy Info!
-				<ul id="menu-css">  
-					<li bgcolor="#3c3c3c"><a href="frontpage.html">Enter!</a></li>  
-	
-				</ul>
-			</p>
 
-	    </div>
 		 <!--sportsticker directive-->
         <div ng-app="sportsTickerDemo" ng-controller="TickerFeedCtrl">
             <sportsticker feed="feed" message-delay="4000" scroll-speed-factor="6.25"></sportsticker>
@@ -75,7 +156,7 @@
 			</div>
 		</div-->
 
-
+	</div>
 		<script>
 		$('.ticker1').easyTicker({
 			direction: 'up',
@@ -149,7 +230,30 @@
 		<script src="../scripts/rx.lite.min.js"></script>
 		<script src="../scripts/rx.min.js"></script>
 		<script src="../scripts/rx.lite.compat.js"></script>
+		<script src="../scripts/vendor/jquery.js"></script>
+		<script src="../scripts/foundation.min.js"></script>
+		<script type="text/javascript" src="slick/slick.min.js"></script>
+		<script>
+		  $(document).foundation();
+		</script>
+		<script type="text/javascript">
+    $(document).ready(function(){
+		 $('.multiple-items').slick({
+		dots: true,
+		arrows: false,
+		autoplay: true,
+		autoplaySpeed: 4000,
+		 slidesToShow: 1,
+	 img: true,
+	 infinite: true,
+  speed: 500,
+  fade: true,
+  cssEase: 'linear'
 
+	});
+    });
+  </script>
+  
     
         <!-- endbuild -->
 </body>

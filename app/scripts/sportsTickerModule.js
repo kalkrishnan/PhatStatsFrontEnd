@@ -323,6 +323,7 @@ angular.module('sportsTicker', ['ngSanitize'])
 						console.log($(msg).width());
                         var messageWidth = $(msg).width() + 20;
                         var msgScrollDuration = Math.floor(messageWidth * scrollSpeedFactor); //set duration proportional to message width
+						console.log("ticker container width"+tickerContainerWidth);
                         var shouldScroll = messageWidth > (tickerContainerWidth - badgeWidth);
 
                         //for each message, set an appropriate keyframe rule and animations class on the animations object,
@@ -483,8 +484,15 @@ angular.module('sportsTicker', ['ngSanitize'])
                  */
                     //set messages html
                 function getMessagesHtml() {
-                     var message = scope.feed[scope.currentTopic].items[scope.currentItem].headline+"  @"+scope.feed[scope.currentTopic].items[scope.currentItem].author;
-                    var messagesHtml = '<ul><li><span><i>' + $sanitize(message) + '</i></span></li></ul>'; //these animations are set dynamically
+					if(scope.feed[scope.currentTopic].items[scope.currentItem].author)
+					{
+						var message = scope.feed[scope.currentTopic].items[scope.currentItem].headline+"  @"+scope.feed[scope.currentTopic].items[scope.currentItem].author;
+					}
+					else
+					{
+						var message = scope.feed[scope.currentTopic].items[scope.currentItem].headline
+					}
+                    var messagesHtml = '<ul><li><span><i><font size=5>' + $sanitize(message) + '</font></i></span></li></ul>'; //these animations are set dynamically
                    
 
                     return messagesHtml;

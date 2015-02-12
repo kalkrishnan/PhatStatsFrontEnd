@@ -1,0 +1,1486 @@
+/* Artfully masterminded by ZURB + REVEL8STUDIOS  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Images
+:: Typography
+:: Shared Styles
+:: Main Content Section
+:: Content-Sub Section (in footer)
+:: Footer
+:: Royal Slider v1.0.2
+:: Media Queries
+*/
+
+/* Javascript must be enabled message -Welcome to the future */
+#noscript {position: absolute; top: 0; left: 0; background-color: #000; z-index: 999; height: 100%; width: 100%; text-align: center; padding-top: 50px;}
+
+/* -----------------------------------------
+   Images
+----------------------------------------- */
+
+.flex img {
+  max-width: 97.5%; /* Fluid images for general usage */ 
+}
+
+img, object, embed {
+  height: auto;
+  max-width: 100%;
+  width: auto; /* Prevent stretching of full-size images with height and >>width attributes in IE8 */
+}
+
+/* -----------------------------------------
+   Typography
+----------------------------------------- */
+
+body,h1,h2,h3,h4,h5,h6 {font-family: 'Open Sans', sans-serif;color:#ffffff;}
+h1,h2,h3,h4,h5,h6 {font-weight:400;color:#b7b7b7;letter-spacing: 1px;}
+
+.blue {
+  color: #00bff3;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.textcenter {
+  text-align: center;
+}
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+html,body
+{
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; 
+}
+
+body {
+  background-color: #000000;
+  min-width: 320px;
+}
+
+.button {
+  background: none repeat scroll 0 0 rgba(91, 245, 245, 0.5);
+  border: 1px solid rgba(91, 245, 245, 0.5);
+  box-shadow: 0 1px 0 rgba(91, 245, 245, 0.5) inset;
+  color: #FFFFFF;
+}
+
+.button.dropdown.large:after {
+  border-color: rgba(91, 245, 245, 0.5) transparent transparent;
+}
+
+.button.dropdown:after {
+  border-color: rgba(91, 245, 245, 0.5) transparent transparent;
+}
+
+.button.dropdown > ul {
+    background: none repeat scroll 0 0 rgba(91, 245, 245, 0.2);
+    border: none;
+}
+
+.button.dropdown > ul li a, .button.dropdown > ul li button {
+    background-color: rgba(91, 245, 245, 0.5) transparent transparent;
+    color: #fff;
+}
+
+.button.dropdown > ul li a:hover {
+    color: #313131;
+}
+
+.large .button .dropdown {
+  min-width: 320px;
+}
+
+/* Navigation */
+nav .nav-bar, .nav-bar li, .nav-bar li a, .nav-bar li ul li, 
+.nav-bar li ul li a, .nav-bar li:last-child {
+  border: none;
+  box-shadow: none;
+  text-transform: uppercase;
+}
+
+.nav-bar {
+	
+  background: url(../images/nav-border.png) no-repeat center bottom;
+  color: #fff;
+  margin-bottom: 8px;
+  margin-top: -25px;
+  }
+
+.nav-bar li a {
+  color: #666666;
+  /* will slow down speed 'li:after{content:"";}' instead;
+  background: url(../images/border-right.png) no-repeat center right;   */
+}
+
+.nav-bar li, .nav-bar li a {padding: 0 22px 0 0; float: left;}
+.nav-bar li:after { content: "/"; color: #666666; }
+
+/*.nav-bar li:last-child:after { content: " "; }*/
+
+/* needed for adding Social Links */
+.nav-bar li:nth-child(6):after, .nav-bar li:nth-child(7):after,
+.nav-bar li:nth-child(8):after, .nav-bar li:nth-child(9):after {
+  content: " "; 
+}
+
+.nav-bar li:hover, .nav-bar a:hover {
+  background-color: transparent;
+  color: #16d6d6;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+.on  {
+  color: #16d6d6 !important;
+  -moz-transition: none;
+  transition: none;
+}
+
+.flyout .menu-item a:hover, .flyout .menu-item a:focus {
+  color: #9acb54;
+  background-color: #f6f6f6;
+}
+
+.nav-border {
+  background: transparent url(../images/under-nav.png) no-repeat center bottom;
+  height: 20px;
+  margin-top: -8px;
+  margin-bottom: -10px;
+}
+
+/* Social links */
+.social {
+  background: url(../images/social.png) repeat scroll 0 0 #272828;
+  width: 35px;
+  height: 35px;
+  border-radius: 50% 50% 50% 50%;
+  margin: 2px -8px 0 0;
+  text-indent: -9999px;
+  -webkit-transition: all 0.3s ease-in-out 0.009s;
+  -moz-transition: all 0.3s ease-in-out 0.009s;
+  transition: all 0.3s ease-in-out 0.009s;
+}
+
+.nav-bar li:nth-child(7) {
+  margin-left: 95px;
+}
+
+a.facebook  { background-position: 0 0; }
+a.facebook:hover { background-position: 0 37px; }
+a.twitter { background-position: -37px 0; }
+a.twitter:hover { background-position: -37px 37px; }
+a.youtube { background-position: 37px 0; }
+a.youtube:hover { background-position: 37px 37px; }
+
+
+
+/* Custom Background Images for games pages */
+.games-wrap {
+  height: auto;
+  max-width: 100%;
+  width: auto;
+  background: url(../images/games-bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  min-height: 730px;
+}
+
+.asg-wrap {
+  height: auto;
+  max-width: 100%;
+  width: auto;
+  background: url(../images/asg-bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  min-height: 730px;
+}
+
+.maze-wrap {
+  height: auto;
+  max-width: 100%;
+  width: auto;
+  background: url(../images/maze-bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  min-height: 730px;
+}
+
+.titan-wrap {
+  height: auto;
+  max-width: 100%;
+  width: auto;
+  background: url(../images/titan-bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  min-height: 730px;
+}
+
+.alien-wrap {
+  height: auto;
+  max-width: 100%;
+  width: auto;
+  background: url(../images/alien-bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  min-height: 730px;  
+}
+
+#header {    
+  background: url(../images/header-bg.png) repeat-x top;
+  margin-bottom: 20px; 
+}
+
+#brand {
+  margin: 0 auto;
+  max-width: 100%;
+  text-align: center;
+}
+
+.site-title {
+  background: url(../images/stormsiege-logo.png) no-repeat left;
+  background-size: 100%;
+  max-width: 390px;
+  max-height: 89px;
+  text-indent: -9999px;
+  padding-top: 35px;
+  margin-top: -35px;
+}
+
+/* -----------------------------------------
+   Main Content Section
+----------------------------------------- */
+
+.main-content {
+  padding-bottom: 80px;
+  overflow: hidden;
+}
+
+.main-content p, .main-content h1, .main-content h2, .main-content h3, .main-content h4, 
+.main-content h5, .main-content h6 {  padding: 5px 10px;}
+
+.content-divider {
+  background: transparent url(../images/mid-content-divider.png) no-repeat center top;
+  min-height: 152px; 
+  margin: -87px 0 0;
+  border-bottom: 10px solid #000000;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+}
+
+.content-nav {
+  position: relative;
+  z-index: 100;
+  margin-top: -75px;
+}
+
+.content-nav ul {
+  font-family: "Times New Roman", Times, serif;
+  color: #16d6d6;
+  letter-spacing: 3px;
+  text-decoration: none;
+  background: none;
+  display: block;
+  margin: 0 0 7px 52px;
+  overflow: hidden;
+  padding: 2px 10px 15px;
+  list-style-position: outside;
+  min-width: 280px;
+}
+
+.content-nav ul li {
+  display: inline-block;
+  padding: 5px 5px 4px 15px;
+  font-size: 20px; /* fallback */
+  font-size: 1.7rem; 
+}
+
+.content-nav li a:hover {
+  color: #5bf5f5;
+}
+
+li.asguard:after {
+  background: url(../images/lion-icon.png) no-repeat center center;
+  background-size: 100%;
+  content: url(../images/spacer.gif);
+  width: 62px;
+  height: 65px;
+  padding: 15px 0;
+}
+
+li.asguard a:hover {
+  background: url(../images/lion-hov.png) no-repeat center center;
+  width: 62px;
+  height: 65px;
+  padding: 15px 0;
+}
+
+li.maze:after {
+  background: url(../images/eagle-icon.png) no-repeat center center;
+  background-size: 100%;
+  content: url(../images/spacer.gif);
+  width: 62px;
+  height: 65px;
+  padding: 15px 0;
+}
+
+li.maze a:hover {
+  background: url(../images/eagle-hov.png) no-repeat center center;
+  width: 62px;
+  height: 65px;
+  padding: 15px 0;
+}
+
+li.titan:after {
+  background: url(../images/crescent-icon.png) no-repeat center center;
+  background-size: 100%;
+  content: url(../images/spacer.gif);
+  width: 62px;
+  height: 65px;
+  padding: 15px 0;
+}
+
+li.titan a:hover {
+  background: url(../images/crescent-hov.png) no-repeat center center;
+  width: 62px;
+  height: 65px;
+  padding: 15px 0;
+}
+
+li.alien:after {
+  background: url(../images/lion-icon.png) no-repeat center center;
+  background-size: 100%;
+  content: url(../images/spacer.gif);
+  width: 62px;
+  height: 65px;
+  padding: 15px 0;
+}
+
+li.alien a:hover {
+  background: url(../images/lion-hov.png) no-repeat center center;
+  width: 62px;
+  height: 65px;
+  padding: 15px 0;
+}
+
+.loading {
+  text-align: center;
+  margin: 225px auto 250px;
+}
+/* Main Content area Background Images */
+
+.homecontent {
+  background: url(../images/homecontent-bg.png) no-repeat center center;
+  min-height: 530px;
+}   
+
+.storycontent {
+  background: url(../images/story-bg.png) no-repeat center center;
+  min-height: 530px;
+}     
+
+.formwrap {
+  padding-top: 40px;
+  background: url(../images/contact-bg.png) no-repeat center center;
+  min-height: 530px;
+}
+
+.homerow {
+  margin: -100px auto 25px auto;
+}
+
+/* Games pages */
+.games, .home {
+  margin: 20px 0;
+}
+
+.home h4 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 500;
+  margin-bottom: 2px;
+  color: #fff;
+}
+
+.games h4, h1.games-heading {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 500;
+  margin-bottom: -5px;
+  color: #fff;
+}
+
+.games h6 {
+  font-style: italic;
+  margin: 0;
+  font-weight: bold;
+  color: #97ffff;
+}
+
+.games a:hover {
+  opacity: 0.9;
+}
+
+img.smo {
+  margin-bottom: -15px;
+}
+
+
+/* -----------------------------------------
+   Content-Sub Section (in footer)
+----------------------------------------- */
+
+.content-sub {
+  margin: 15px 0 0;
+}
+
+.content-sub ul {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.content-sub-nav li {
+  list-style-type: none;
+  display: inline-block;
+  width: 310px; height: 225px;
+  text-indent: -9999px;
+  overflow: hidden;
+  margin-left: 14px;
+}
+
+.content-sub li:first-child {
+  margin-left: -10px;
+}
+
+.content-sub-nav li a {
+  display: block;
+  line-height: 225px;
+  width: 310px; height: 215px;
+}
+
+.glow-divide {
+  max-width: 100%;
+  height: 126px;
+  background: url(../images/glow-divide.png) no-repeat;
+  background-size: 100%;
+  margin: -15px 0 -75px 0;
+}
+
+.glow-divide-bottom {
+  max-width: 100%;
+  height: 126px;
+  background: url(../images/glow-divide.png) no-repeat;
+  background-size: 100%;
+  margin: -15px 0 -55px;
+}
+
+/* Content Navigation Thumbs */
+.content-nav-thumbs ul {
+  max-width: 969px; min-height: 200px;
+  margin: 5px 10px 0 auto;
+  padding-top: 10px;
+  background: url(../images/content-nav-bg.png); 
+}
+
+.content-nav-thumbs ul li {
+  list-style-type: none;
+  width: 196px;
+  height: 152px;
+  float: left;
+  margin-left: 34px;
+  margin-top: 15px;
+}
+
+/* Three Column Content Sub-Nav */
+#hiring-link {
+  background-image: url(../images/content-sub.png);
+  background-position: 0 0; 
+}
+
+#forum-link {
+  background-image: url(../images/content-sub.png);
+  background-position: 633px 0; 
+  margin-left: 18px;
+}
+
+#games-link {
+  background-image: url(../images/content-sub.png);
+  background-position: 310px 0; 
+}
+
+#hiring-link a:hover {
+  opacity: 0.8;
+}
+
+/* -----------------------------------------
+  Footer
+----------------------------------------- */
+
+#footer {
+  margin-bottom: 25px;
+}
+
+#site-info h3, #site-info h4 {
+  text-transform: uppercase;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #7f7f7f;
+  letter-spacing: .2rem;
+}
+
+#site-info {
+  border-top: 1px solid #7f7f7f;
+  margin-bottom: 25px;
+  color: #7f7f7f;
+}
+
+#site-info ul li {
+  list-style-type: none;
+  text-decoration: none;
+  padding: 5px 0;
+}
+
+#site-info li a {
+  color: #7f7f7f;
+}
+
+#site-info li a:hover {
+  color: #16d6d6;
+}
+
+ul#footer-social {
+  margin-left: 12px;
+}
+
+#footer-social li a {
+  background: url(../images/social.png) repeat scroll 0 0 #000;
+  width: 35px;
+  height: 35px;
+  float: left;
+  border-radius: 50% 50% 50% 50%;
+  margin: 0 10px 0 0;
+  text-indent: -9999px;
+}
+
+#footer-social a.facebook  { background-position: 0 0; }
+#footer-social a.facebook:hover { background-position: 0 37px; }
+#footer-social a.twitter { background-position: -37px 0; margin-top: -10px;}
+#footer-social a.twitter:hover { background-position: -37px 37px; }
+#footer-social a.youtube { background-position: 37px 0; margin-top: -20px;}
+#footer-social a.youtube:hover { background-position: 37px 37px; }
+
+#copy-rights {
+  text-align: center;
+  font-size: 11px;
+  font-size: 1rem;
+  line-height: 12px;
+  color: #4a4a4a;
+}
+
+/* -----------------------------------------
+  Royal Slider v1.0.2
+----------------------------------------- */
+/* Core RS CSS. 95% of time you shouldn't change anything here. */
+.royalSlider {
+  width: 600px;
+  height: 400px;
+  position: relative;
+  direction: ltr;
+}
+
+.rsWebkit3d .rsSlide,
+.rsWebkit3d .rsContainer,
+.rsWebkit3d .rsThumbs,
+.rsWebkit3d .rsPreloader,
+.rsWebkit3d img,
+.rsWebkit3d .rsOverflow,
+.rsWebkit3d .rsBtnCenterer,
+.rsWebkit3d .rsAbsoluteEl {
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0); 
+}
+.rsFade.rsWebkit3d .rsSlide,
+.rsFade.rsWebkit3d img,
+.rsFade.rsWebkit3d .rsContainer {
+  -webkit-transform: none;
+}
+.rsOverflow {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  float: left;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+.rsContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+.rsArrow,
+.rsThumbsArrow {
+  cursor: pointer;
+}
+
+.rsThumb {
+  float: left;
+  position: relative;
+}
+
+.rsArrow,
+.rsNav,
+.rsThumbsArrow {
+  opacity: 1;
+  -webkit-transition:opacity 0.3s linear;
+  -moz-transition:opacity 0.3s linear;
+  -o-transition:opacity 0.3s linear;
+  transition:opacity 0.3s linear;
+}
+.rsHidden {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition:visibility 0s linear 0.3s,opacity 0.3s linear;
+  -moz-transition:visibility 0s linear 0.3s,opacity 0.3s linear;
+  -o-transition:visibility 0s linear 0.3s,opacity 0.3s linear;
+  transition:visibility 0s linear 0.3s,opacity 0.3s linear;
+}
+
+
+.rsGCaption {
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+
+/* Fullscreen options, very important ^^ */
+.royalSlider.rsFullscreen {
+  position: fixed !important;
+  height: auto !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 2147483647 !important;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  right: 0 !important;
+}
+
+.royalSlider .rsSlide.rsFakePreloader {
+  opacity: 1 !important;
+  -webkit-transition: 0s;
+  -moz-transition: 0s;
+  -o-transition:  0s;
+  transition:  0s;
+  display: none;
+}
+
+.rsSlide {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  overflow: hidden;
+  
+  height: 100%;
+  width: 100%;
+}
+
+.royalSlider.rsAutoHeight,
+.rsAutoHeight .rsSlide {
+  height: auto;
+}
+
+.rsContent {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.rsPreloader {
+  position:absolute;
+  z-index: 0; 
+}
+
+.rsNav {
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.rsNavItem {
+  -webkit-tap-highlight-color:rgba(0,0,0,0.25);
+}
+
+.rsThumbs {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  float: left;
+  z-index: 22;
+}
+.rsTabs {
+  float: left;
+}
+.rsTabs,
+.rsThumbs {
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+
+.rsVideoContainer {
+  /*left: 0;
+  top: 0;
+  position: absolute;*/
+  /*width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  float: left;*/
+  width: auto;
+  height: auto;
+  line-height: 0;
+  position: relative;
+}
+.rsVideoFrameHolder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #141414;
+  opacity: 0;
+  -webkit-transition: .3s;
+}
+.rsVideoFrameHolder.rsVideoActive {
+  opacity: 1;
+}
+.rsVideoContainer iframe,
+.rsVideoContainer video,
+.rsVideoContainer embed,
+.rsVideoContainer .rsVideoObj {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+/* ios controls over video bug, shifting video */
+.rsVideoContainer.rsIOSVideo iframe,
+.rsVideoContainer.rsIOSVideo video,
+.rsVideoContainer.rsIOSVideo embed {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 44px;
+}
+
+.rsABlock {
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: 15;
+  -webkit-backface-visibility: hidden;
+}
+
+.grab-cursor {
+  cursor:url(../images/grab.png) 8 8, move; 
+}
+
+.grabbing-cursor{ 
+  cursor:url(../images/grabbing.png) 8 8, move;
+}
+
+.rsNoDrag {
+  cursor: auto;
+}
+
+.rsLink {
+  left:0;
+  top:0;
+  position:absolute;
+  width:100%;
+  height:100%;
+  display:block;  
+  z-index: 20;
+  background: url(../images/blank.gif);
+  -webkit-backface-visibility: hidden;
+}
+
+/******************************
+*
+*  RoyalSlider Default Skin 
+*
+*    1. Arrows 
+*    2. Bullets
+*    3. Thumbnails
+*    4. Tabs
+*    5. Fullscreen button
+*    6. Play/close video button
+*    7. Preloader
+*    
+*  Sprite: 'rs-default.png'
+*  Feel free to edit anything
+*  If you don't some part - just delete it
+* 
+******************************/
+
+
+/* Background */
+.rsDefault .rsOverflow,
+.rsDefault .rsSlide,
+.rsDefault .rsVideoFrameHolder,
+.rsDefault .rsThumbs {
+  background: transparent;
+}
+
+
+/***************
+*
+*  1. Arrows
+*
+****************/
+
+.rsDefault .rsArrow {
+  height: 100%;
+  width: 44px;
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  z-index: 21;
+}
+.rsDefault.rsVer .rsArrow {
+  width: 100%;
+  height: 44px;
+  
+}
+.rsDefault.rsVer .rsArrowLeft { top: 0; left: 0; }
+.rsDefault.rsVer .rsArrowRight { bottom: 0;  left: 0; }
+
+.rsDefault.rsHor .rsArrowLeft { left: 0; top: 0; }
+.rsDefault.rsHor .rsArrowRight { right: 0; top:0; }
+
+.rsDefault .rsArrowIcn {    
+  width: 32px;
+  height: 32px;
+  top: 50%;
+  left: 50%;
+  margin-top:-16px; 
+  margin-left: -16px;
+
+  position: absolute; 
+  cursor: pointer;  
+  background: url(../images/rs-default.png);
+  background-color: rgba(0,0,0,0.75);
+  *background-color: #111;
+  
+  border-radius: 2px;
+}
+.rsDefault .rsArrowIcn:hover {
+  background-color: rgba(0,0,0,0.9);
+}
+
+.rsDefault.rsHor .rsArrowLeft .rsArrowIcn { background-position: -64px -32px; }
+.rsDefault.rsHor .rsArrowRight .rsArrowIcn { background-position: -64px -64px; }
+
+.rsDefault.rsVer .rsArrowLeft .rsArrowIcn { background-position: -96px -32px; }
+.rsDefault.rsVer .rsArrowRight .rsArrowIcn { background-position: -96px -64px; }
+
+.rsDefault .rsArrowDisabled .rsArrowIcn { background-color: rgba(0,0,0,0.4); opacity: .4; *display: none; }
+
+
+/***************
+*
+*  2. Bullets
+*
+****************/
+
+.rsDefault .rsBullets {
+  position: absolute;
+  z-index: 35;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  margin: 0 auto; 
+  background: #000;
+  background: rgba(0,0,0,0.75);
+  text-align: center;
+  line-height: 18px;
+  overflow: hidden;
+}
+.rsDefault .rsBullet {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  *display:inline; 
+  *zoom:1;
+  margin: 0 5px 1px;
+  border-radius: 50%;
+  background: #777;
+  background: rgba(255,255,255,0.5);
+}
+.rsDefault .rsBullet.rsNavSelected  {
+  background-color: #FFF;
+}
+
+
+
+
+
+/***************
+*
+*  3. Thumbnails
+*
+****************/
+
+.rsDefault .rsThumbsHor {
+  padding-bottom: 4px;
+  width: 100%;
+  height: 72px;
+}
+.rsDefault .rsThumbsVer {
+  padding-right: 4px;
+  width: 96px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.rsDefault.rsWithThumbsHor .rsThumbsContainer {
+  position: relative;
+  height: 100%;
+}
+.rsDefault.rsWithThumbsVer .rsThumbsContainer {
+  position: relative;
+  width: 100%;
+}
+.rsDefault .rsThumb {
+  float: left;
+  overflow: hidden;
+  width: 96px;
+  height: 72px;
+}
+.rsDefault .rsThumb img {
+  width: 100%;
+  height: 100%;
+}
+.rsDefault .rsThumb.rsNavSelected {
+  background: #02874a;
+}
+.rsDefault .rsThumb.rsNavSelected img {
+  opacity: 0.3;
+  filter: alpha(opacity=30);
+}
+.rsDefault .rsTmb {
+  display: block;
+}
+
+/* Thumbnails arrow icons */
+.rsDefault .rsThumbsArrow {
+  height: 100%;
+  width: 20px;
+  position: absolute;
+  display: block;
+  cursor: pointer;  
+  z-index: 21;  
+  background: #000;
+  background: rgba(0,0,0,0.75);
+}
+.rsDefault .rsThumbsArrow:hover {
+  background: rgba(0,0,0,0.9);
+}
+.rsDefault.rsWithThumbsVer .rsThumbsArrow {
+  width: 100%;
+  height: 20px;
+}
+.rsDefault.rsWithThumbsVer .rsThumbsArrowLeft { top: 0; left: 0; }
+.rsDefault.rsWithThumbsVer .rsThumbsArrowRight { bottom: 0;  left: 0; }
+
+.rsDefault.rsWithThumbsHor .rsThumbsArrowLeft { left: 0; top: 0; }
+.rsDefault.rsWithThumbsHor .rsThumbsArrowRight { right: 0; top:0; }
+
+.rsDefault .rsThumbsArrowIcn {    
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin-top:-8px;  
+  margin-left: -8px;
+  position: absolute; 
+  cursor: pointer;  
+  background: url(../images/rs-default.png);
+}
+
+.rsDefault.rsWithThumbsHor .rsThumbsArrowLeft .rsThumbsArrowIcn { background-position: -128px -32px; }
+.rsDefault.rsWithThumbsHor .rsThumbsArrowRight .rsThumbsArrowIcn { background-position: -128px -48px; }
+
+.rsDefault.rsWithThumbsVer .rsThumbsArrowLeft .rsThumbsArrowIcn { background-position: -144px -32px; }
+.rsDefault.rsWithThumbsVer .rsThumbsArrowRight .rsThumbsArrowIcn { background-position: -144px -48px; }
+
+.rsDefault .rsThumbsArrowDisabled { display: none !important; }
+
+/* Thumbnails resizing on smaller screens */
+@media screen and (min-width: 0px) and (max-width: 800px) {
+  .rsDefault .rsThumb {
+    width: 59px;
+    height: 44px;
+  }
+  .rsDefault .rsThumbsHor {
+    height: 44px;
+  }
+  .rsDefault .rsThumbsVer {
+    width: 59px;
+  }
+}
+
+
+
+
+/***************
+*
+*  4. Tabs
+*
+****************/
+
+.rsDefault .rsTabs {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  text-align:center;
+  overflow: hidden; padding-top: 12px; position: relative;
+}
+.rsDefault .rsTab {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  height: auto;
+  width: auto;
+  color: #f7f7f7;
+  padding: 5px 13px 6px;
+  min-width: 72px;
+  border: 1px solid #000;
+  text-decoration: none;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.5); 
+  -webkit-box-shadow: inset 1px 0 0 #313131;
+  box-shadow: inset 1px 0 0 #313131;
+  *display:inline; 
+  *zoom:1;
+}
+.rsDefault .rsTab:first-child {
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.rsDefault .rsTab:last-child { 
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.rsDefault .rsTab:active { 
+  border: 1px groove #000;   
+  background-color: transparent;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) inset;
+  box-shadow:  0 1px 4px rgba(0, 0, 0, 0.2) inset;
+}
+.rsDefault .rsTab.rsNavSelected { 
+  color: #fff;
+  border: 2px solid #5bf5f5;
+  text-shadow: 0px 2px 6px #5bf5f5;
+  -webkit-box-shadow: 0 1px 9px rgba(91, 245, 245, 0.7);
+  box-shadow: 0 1px 9px rgba(91, 245, 245, 0.7);
+  background: transparent;
+  background-color: rgba(91, 245, 245, 0.5); 
+}
+
+
+
+
+
+/***************
+*
+*  5. Fullscreen button
+*
+****************/
+
+.rsDefault .rsFullscreenBtn {
+  right: 0;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  z-index: 22;
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  
+}
+.rsDefault .rsFullscreenIcn {
+  display: block;
+  margin: 6px;
+  width: 32px;
+  height: 32px;
+
+  background: url(../images/rs-default.png) 0 0;
+  background-color: rgba(0,0,0,0.75);
+  *background-color: #000;
+  border-radius: 2px;
+
+}
+.rsDefault .rsFullscreenIcn:hover {
+  background-color: rgba(0,0,0,0.9);
+}
+.rsDefault.rsFullscreen .rsFullscreenIcn {
+  background-position: -32px 0;
+}
+
+
+
+
+
+/***************
+*
+*  6. Play/close video button
+*
+****************/
+
+.rsDefault .rsPlayBtn {
+  -webkit-tap-highlight-color:rgba(0,0,0,0.3);
+  width:64px;
+  height:64px;
+  margin-left:-32px;
+  margin-top:-32px;
+  cursor: pointer;
+}
+.rsDefault .rsPlayBtnIcon {
+  width:64px;
+  display:block;
+  height:64px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background:url(../images/rs-default.png) no-repeat 0 -32px;
+  
+  background-color: rgba(0,0,0,0.75);
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  transition: .3s;
+  *background-color: #000;
+}
+.rsDefault .rsPlayBtn:hover .rsPlayBtnIcon {
+  background-color: rgba(0,0,0,0.9);
+}
+.rsDefault .rsBtnCenterer {
+  position:absolute;
+  left:50%;
+  top:50%;
+  width: 20px;
+  height: 20px;
+}
+.rsDefault .rsCloseVideoBtn {
+  right: 0;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  z-index: 500;
+  position: absolute;
+  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  
+}
+.rsDefault .rsCloseVideoBtn.rsiOSBtn {
+  top: -38px;
+  right: -6px;
+  /*top: -6px;
+  right: -38px;*/
+}
+
+.rsDefault .rsCloseVideoIcn {
+  margin: 6px;
+  width: 32px;
+  height: 32px;
+  background: url('rs-default.png') -64px 0;
+  background-color: #000;
+  background-color: rgba(0,0,0,0.75);
+}
+.rsDefault .rsCloseVideoIcn:hover {
+  background-color: rgba(0,0,0,0.9);
+}
+
+
+
+/***************
+*
+*  7. Preloader
+*
+****************/
+
+.rsDefault .rsPreloader {
+  width:20px;
+  height:20px;
+  background-image:url(../images/preloader-white.gif);
+
+  left:50%;
+  top:50%;
+  margin-left:-10px;
+  margin-top:-10px; 
+}
+.contentSlider {
+  width: 100%;
+}
+.contentSlider .rsSlide,
+.contentSlider .rsOverflow {
+
+}
+.contentSlider h3 {
+  font-size: 24px;
+  line-height: 31px;
+  margin: 12px 0 8px;
+  font-weight: bold;
+}
+.contentSlider img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.content-slider-bg {
+  width: 86%;
+  padding: 24px 7%;
+  background: #eee;
+}
+
+.rsImg {
+  margin: 0 auto;
+}
+
+.rsTmb {
+  width: 215px;
+  height: 45px;
+  line-height: 45px;
+  text-transform: uppercase;
+}
+
+/* Visible Nearby Slider */
+#gallery-1 {
+  width: 50%;
+  margin: 24px 25% 66px;
+  color: #FFF;
+}
+.visibleNearby {
+  background: transparent;
+  width: 100%;
+  overflow: hidden;
+}
+.visibleNearby .rsGCaption {
+  margin-top: 12px;
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 18px;
+  padding-bottom: 16px;
+}
+.visibleNearby .rsGCaption span {
+  display: block;
+  clear: both;
+  color: #bbb;
+  font-size: 14px;
+  line-height: 22px;
+}
+.visibleNearby .rsOverflow,
+.visibleNearby .rsSlide {
+  background: none;
+}
+.visibleNearby .rsOverflow {
+  overflow: visible;
+}
+
+
+/* Scaling transforms */
+.visibleNearby .rsSlide img {
+  opacity: 0.45;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+
+  -webkit-transform: scale(0.9);  
+  -moz-transform: scale(0.9); 
+  -ms-transform: scale(0.9);
+  -o-transform: scale(0.9);
+  transform: scale(0.9);
+}
+.visibleNearby .rsActiveSlide img {
+  opacity: 1;
+  -webkit-transform: scale(1);  
+  -moz-transform: scale(1); 
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+
+/* Non-linear resizing on smaller screens */
+@media screen and (min-width: 0px) and (max-width: 900px) { 
+   #gallery-1 {
+    width: 62%;
+    margin-left: 19%;
+    padding: 12px 0 12px;
+    color: #FFF;
+  }
+  #gallery-1 .rsOverflow,
+  .royalSlider#gallery-1 {
+    height: 400px !important;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 500px) { 
+  #gallery-1 .rsOverflow,
+  .royalSlider#gallery-1 {
+    height: 300px !important;
+  }
+}
+
+ /* Reveal Modal */
+.reveal-modal {
+  /* background: none repeat scroll 0 0 rgba(91, 245, 245, 0.9);  blueish */
+  /* background: none repeat scroll 0 0 rgba(54, 54, 54, 0.9); transgray */
+  background: none repeat scroll 0 0 #000000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  display: none;
+  left: 50%;
+  margin-left: -25%;
+  padding: 20px;
+  position: absolute;
+  top: 100px;
+  visibility: hidden;
+  width: 50%;
+  z-index: 700;
+}
+
+.reveal-modal img {
+  margin: 0 auto;
+}
+
+.modal-thumbs {
+  padding: 5px;
+  display: inline-block;
+}
+
+/* Accordian */
+ul.accordion > li > div.title {
+  background: rgba(27, 27, 27, 0.8);
+}
+
+ul.accordion > li.active .title {
+  background: rgba(91, 245, 245, 0.6);
+  border-left: 2px solid rgba(91, 245, 245, 0.6);
+  border-right: 2px solid rgba(91, 245, 245, 0.6);
+}
+
+ul.accordion > li > div.title:after {
+  border-color: transparent #97ffff transparent transparent;
+}
+
+ul.accordion > li.active .content {
+  background: none repeat scroll 0 0 rgba(27, 27, 27, 0.8);
+  border: 1px solid #97ffff;
+}
+
+
+/* -----------------------------------------
+  Media Queries
+----------------------------------------- */
+
+@media only screen and (max-width: 980px) and (min-width: 768px) { 
+  #header {background: none;} 
+
+  .content-nav ul {
+    min-width: 250px;
+    width: 320px;
+    margin: 0 auto;
+  }
+
+  .content-sub ul {
+    width: 310px;
+    margin: 0 auto;
+  } 
+
+  .content-sub-nav li, .content-sub li:first-child, #forum-link {
+    margin: 0 auto;
+  }
+
+  .content-nav-thumbs ul {
+    width: 550px;
+    margin: 0 auto;
+    min-height: 365px;
+    padding-top: 0;
+    background: none; 
+  }
+}
+
+@media only screen and (max-width: 767px) { 
+
+  #header {
+    background: none;
+  }
+
+  .content-nav ul {
+    min-width: 250px;
+    width: 340px;
+    margin: 0 auto;
+    margin-left: 22%;
+  }
+  .content-sub ul, #site-info {
+    min-width: 310px;
+    margin: 0 auto;
+  }
+
+  .content-nav-thumbs ul {
+    min-width: 235px;
+    min-height: 675px;
+    margin: 0 auto 15px;
+    padding-top: 0;
+    background: none; 
+  }
+
+  .content-sub-nav li, .content-sub li:first-child, #forum-link {
+    margin: 0 auto;
+  }
+
+  .homecontent, .storycontent, .formwrap {
+    background: none;
+  }
+}
+
+/* Landscape Orientation */
+@media screen and (orientation: landscape) { 
+
+}
