@@ -13,11 +13,14 @@ body {
     background-size: 2000px 1000px;
     background-repeat:no-repeat;
     display: compact;
+	
 
 font: 14px/1.6 'Helvetica Neue', Helvetica, Arial, sans-serif;
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
+
 
 /* Main Content Wrapper Background Image */
 .upper-wrap { 
@@ -36,9 +39,10 @@ font: 14px/1.6 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 .upper-wrap::after{ 
 	content: "";
+	 margin: 0 auto;
   height: 100%;
   max-width: 100%;
-  width: 100%;
+  width: 60%;
   background: url(../images/fantasy_football.jpg); 
 
   -webkit-background-size: cover;
@@ -55,6 +59,106 @@ font: 14px/1.6 'Helvetica Neue', Helvetica, Arial, sans-serif;
   z-index: -1;   
 }
 
+
+div[class^="upper-wrapEJ Manuel"] { 
+ height: auto;
+  max-width: 100%;
+  width: auto;
+  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  min-height: 730px;
+}
+
+div[class^="upper-wrapEJ Manuel"]::after{ 
+	content: "";
+	 margin: 0 auto;
+  height: 100%;
+  max-width: 100%;
+  width: 60%;
+  background: url(../images/EJManuel.jpg); 
+  	border:3px solid rgba(0,0,0,0.5);
+	border-radius:10px 10px 2px 2px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+ opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
+div[class^="upper-wrapTom Brady"] { 
+ height: auto;
+  max-width: 100%;
+  width: auto;
+  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  min-height: 730px;
+}
+
+div[class^="upper-wrapTom Brady"]::after{ 
+	content: "";
+	 margin: 0 auto;
+  height: 100%;
+  max-width: 100%;
+  width: 60%;
+  background: url(../images/TomBrady.jpg); 
+  	border:3px solid rgba(0,0,0,0.5);
+	border-radius:10px 10px 2px 2px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+ opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
+.transbox {
+
+
+	border:1px solid rgba(0,0,0,0.5);
+	border-radius:10px 10px 2px 2px;
+	-webkit-box-shadow:
+		0 2px 6px rgba(0,0,0,0.5),
+		inset 0 1px rgba(255,255,255,0.3),
+		inset 0 10px rgba(255,255,255,0.2),
+		inset 0 10px 20px rgba(255,255,255,0.25),
+		inset 0 -15px 30px rgba(0,0,0,0.3);
+	-moz-box-shadow:
+		0 2px 6px rgba(0,0,0,0.5),
+		inset 0 1px rgba(255,255,255,0.3),
+		inset 0 10px rgba(255,255,255,0.2),
+		inset 0 10px 20px rgba(255,255,255,0.25),
+		inset 0 -15px 30px rgba(0,0,0,0.3);
+	box-shadow:
+		0 2px 6px rgba(0,0,0,0.5),
+		inset 0 1px rgba(255,255,255,0.3),
+		inset 0 10px rgba(255,255,255,0.2),
+		inset 0 10px 20px rgba(255,255,255,0.25),
+		inset 0 -15px 30px rgba(0,0,0,0.3);
+	background:rgba(0,0,0,0.25);
+}
 
 
 .centered {

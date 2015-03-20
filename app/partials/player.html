@@ -1,0 +1,106 @@
+<div id="mainwrap" class="upper-wrap{{id}} large-12 columns large-centered">
+		
+    <header id="header">
+      <div class="row">
+      
+      </div>
+    </header>
+    <!-- End Header -->
+
+  <nav class="row hide-for-small transbox">
+  
+      <ul class="nav-bar">
+        <li>
+          <a class="on" href="index.php">Home</a>
+        </li>
+        <li>
+          <a  href="games.php">Games</a>
+        </li>
+        <li>
+          <a  href="concept-art.php">Concept Art</a>
+        </li>
+        <li>
+          <a  href="work-with-us.php">Work With Us</a>
+        </li> 
+        <li>
+          <a href="http://www.fluidwebstudio.com/stormsiege/cms/">Forum</a>
+        </li> 
+       
+      </ul>        
+      <div class="nav-border"></div>
+	
+	 
+    </nav>
+
+	<div class="row">
+
+		<div class="large-3 columns">
+		<h1><img src="images/PhatStats.png"/></h1>
+		</div>
+	</div>
+	
+
+	 <div ng-app="sportsTickerDemo" ng-controller="TickerFeedCtrl" class="scope">
+	<div class="large-12 medium-4 columns">
+			<div class="row">
+			<div class="large-6 columns">
+	        	<div class="transbox" class="scope">
+					<h6><i><font color="#16d6d6">{{id}}</font></i></h6>
+					<table border="0">
+					<tr bgcolor="black">
+					<th></th>
+						<th id="stat1"><i><font color="#16d6d6">REC</font></i></th>
+					
+						<th id="stat2"><i><font color="#16d6d6">YDS</font></i></th>
+					
+						<th id="stat3"><i><font color="#16d6d6">TD</font></i></th>
+					
+						<th id="stat4"><i><font color="#16d6d6">AVG</font></i></th>
+					
+						<th id="stat5"><i><font color="#16d6d6">LONG</font></i></th>
+						
+					</tr>
+					<tr >
+					<td><img  id="playerImage"/></td>
+					
+						<td bgcolor="black"><i><font color="#16d6d6"  id="val1">5</font></i></td>
+					
+						<td bgcolor="black"><i><font color="#16d6d6"  id="val2">69</font></i></td>
+					
+						<td bgcolor="black" ><i><font color="#16d6d6"  id="val3">3</font></i></td>
+					
+						<td bgcolor="black" ><i><font color="#16d6d6"  id="val4">1.8</font></i></td>
+					
+						<td bgcolor="black"><i><font color="#16d6d6"  id="val5">37</font></i></td>
+					
+					</tr>
+					</table>
+					
+					
+				</div>
+			</div>
+			<div class="large-6 columns">
+	        		<div class="transbox" class="scope">
+	<jqcloud words="words" width="500" height="250" steps="9"  shape="'rectangular'" colors={{colors}} autoResize="true" removeOverflowing="true" center="{x:0.35,y:0.55}"></jqcloud>
+	</div>
+	</div>
+
+     
+    </div>
+	
+		 <!--sportsticker directive-->
+       
+            <sportsticker feed="feed" message-delay="4000" scroll-speed-factor="6.25"></sportsticker>
+			
+        
+		<!--div class="ticker1" id="outPopUp">
+			<div class="innerWrap"  >
+				<ul   id="news" > 
+			</div>
+		</div-->
+
+	</div>
+	</div>
+	<script>
+document.getElementById("mainwrap").addClass("upper-wrapE");
+</script>	

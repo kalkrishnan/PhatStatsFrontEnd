@@ -13,6 +13,7 @@
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="bower_components/jqcloud2/dist/jqcloud.css" />
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
@@ -28,9 +29,12 @@
 		<script src="../scripts/sportsTickerModule.js"></script>
 		<script src="../scripts/prefix-free-min.js"></script>
 		<script src="../scripts/sportsTickerDemo.js"></script>
+	
         <script src="../scripts/prefix-free-dynamic-dom-min.js"></script>
+				<script src="../scripts/jquery-1.10.2.min.js"></script>
         <!-- endbuild -->
 		<meta charset="utf-8">
+		    
 		
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 		<script src="scripts/jquery-1.10.2.min.js"></script>
@@ -57,106 +61,10 @@
 
     <body ng-app="PhatStatsApp" ng-controller="phatStatsController">
 	
-	<div class="upper-wrap">
-    <header id="header">
-      <div class="row">
-      
-      </div>
-    </header>
-    <!-- End Header -->
 
-  <nav class="row hide-for-small">
-      <ul class="nav-bar">
-        <li>
-          <a class="on" href="index.php">Home</a>
-        </li>
-        <li>
-          <a  href="games.php">Games</a>
-        </li>
-        <li>
-          <a  href="concept-art.php">Concept Art</a>
-        </li>
-        <li>
-          <a  href="work-with-us.php">Work With Us</a>
-        </li> 
-        <li>
-          <a href="http://www.fluidwebstudio.com/stormsiege/cms/">Forum</a>
-        </li> 
-       
-      </ul>        
-      <div class="nav-border"></div>
-    </nav>
-
-	<!--ul class="small-block-grid-3">
-		<li></li>
-		<li><img src="images/ray_lewis.jpg" alt="image1"></li>
-  	</ul-->
+	<ng-view></ng-view>
 	
-	<div class="row">
-
-		<div class="large-3 columns">
-		<h1><img src="images/PhatStats.png"/></h1>
-		</div>
-	</div>
 	
-	<div class="row">
-
-		<div class="multiple-items">
-				<ul class="small-block-grid-3" align="center">
-					<li></li>
-					<li><img src="images/ray_lewis.jpg" alt="image1"></li>
-				</ul>
-				<ul class="small-block-grid-3">
-					<li></li>
-					<li><img src="images/afce_buffalo-only.png" alt="image1"></li>
-				</ul>
-				<ul class="small-block-grid-3">
-					<li></li>
-					<li><img src="images/afce_miami-only.png" alt="image1"></li>
-				</ul>
-				<ul class="small-block-grid-3">
-					<li></li>
-					<li><img src="images/afce_newengland-only.png" alt="image1"></li>
-				</ul>
-				<ul class="small-block-grid-3">
-					<li></li>
-					<li><img src="images/afce_newyorkjets-only.png" alt="image1"></li>
-				</ul>
-		</div>
-	</div>
-	
-	<div class="large-12 medium-4 columns">
-			<div class="row">
-	        	<div class="large-4 medium-4 small-centered columns">
-	    		 <ul class="nav nav-pills pull-center">
-					 <form action="" class="search-form frame inbtn rlarge">
-						<input type="text" id="textInput" ng-model="keywords" ng-keyup="search()"  class="search-input" placeholder="Search..." />
-						<ul id="results" ng-show="keywords" ng-if="keywords.length > 2" ng-repeat="player in playersList | filter: searchFilter " ng-cloak><li><a href='http://www.nfl.com'><font color="#16d6d6">{{ player.displayName }}&nbsp;{{ player.position }}&nbsp;{{ player.team }}</font></a></li></ul>      
-					</form> 
-			    </ul>
-
-				</div>
-	        	 
-			</div>
-      	
-     
-    </div>
-        <div class="centered">
-         
-               
-		</div>
-
-		 <!--sportsticker directive-->
-        <div ng-app="sportsTickerDemo" ng-controller="TickerFeedCtrl">
-            <sportsticker feed="feed" message-delay="4000" scroll-speed-factor="6.25"></sportsticker>
-        </div>
-		<!--div class="ticker1" id="outPopUp">
-			<div class="innerWrap"  >
-				<ul   id="news" > 
-			</div>
-		</div-->
-
-	</div>
 		<script>
 		$('.ticker1').easyTicker({
 			direction: 'up',
@@ -190,6 +98,7 @@
         <script src="bower_components/angular-route/angular-route.js"></script>
         <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
         <script src="bower_components/angular-touch/angular-touch.js"></script>
+        <script src="bower_components/jqcloud2/dist/jqcloud.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -233,27 +142,13 @@
 		<script src="../scripts/vendor/jquery.js"></script>
 		<script src="../scripts/foundation.min.js"></script>
 		<script type="text/javascript" src="slick/slick.min.js"></script>
+
+		<script type="text/javascript" src="../scripts/jqcloud.js"></script>
+		<script  type="text/javascript" src="../scripts/jqcloud.min.js"></script>
+			<script src="../scripts/angular-jqcloud.js"></script>
 		<script>
 		  $(document).foundation();
 		</script>
-		<script type="text/javascript">
-    $(document).ready(function(){
-		 $('.multiple-items').slick({
-		dots: true,
-		arrows: false,
-		autoplay: true,
-		autoplaySpeed: 4000,
-		 slidesToShow: 1,
-	 img: true,
-	 infinite: true,
-  speed: 500,
-  fade: true,
-  cssEase: 'linear'
-
-	});
-    });
-  </script>
-  
     
         <!-- endbuild -->
 </body>

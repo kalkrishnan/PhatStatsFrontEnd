@@ -92,7 +92,7 @@ angular.module('sportsTicker', ['ngSanitize'])
                     //return topic indexes beginning with currentTopic to end of topics
 
                     if(scope.feed) {
-						console.log(scope.feed);
+						
                         var itemsRemaining = scope.feed.slice(scope.currentTopic, scope.feed.length);
                         var topicsListLength = 7;
                         var i = 0;

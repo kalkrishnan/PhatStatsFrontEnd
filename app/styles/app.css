@@ -110,7 +110,7 @@ nav .nav-bar, .nav-bar li, .nav-bar li a, .nav-bar li ul li,
   background: url(../images/nav-border.png) no-repeat center bottom;
   color: #fff;
   margin-bottom: 8px;
-  margin-top: -25px;
+  margin-top: 25px;
   }
 
 .nav-bar li a {
