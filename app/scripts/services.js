@@ -6,7 +6,7 @@ angular.module('PhatStatsApp.services', []).
     playersAPI.getPlayers = function() {
       return $http({
          dataType: 'json', 
-        url: 'http://localhost:4567/NFLPlayers'
+        url: 'http://localhost:8081/PhatStats-1.0/Service/Players'
       });
     }
 
@@ -19,7 +19,7 @@ angular.module('PhatStatsApp.services', []).
     playersAPI.getPlayers = function() {
       return $http({
          dataType: 'json', 
-        url: 'http://localhost:4567/NFLPlayers'
+        url: 'http://localhost:8081/PhatStats-1.0/Service/Players'
       });
     }
 

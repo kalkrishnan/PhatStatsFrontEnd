@@ -73,7 +73,7 @@
 	    		 <ul class="nav nav-pills pull-center">
 					 <form action="" class="search-form frame inbtn rlarge transbox">
 						<input type="text" id="textInput" ng-model="keywords" ng-keyup="search()"  class="search-input" placeholder="Search..." />
-						<ul id="results" ng-show="keywords" ng-if="keywords.length > 2" ng-repeat="player in playersList | filter: searchFilter " ng-cloak><li><a href="#/home/{{ player.displayName }} {{ player.position }} {{ player.team }}"><font color="#16d6d6">{{ player.displayName }}&nbsp;{{ player.position }}&nbsp;{{ player.team }}</font></a></li></ul>      
+						<ul id="results" ng-show="keywords" ng-if="keywords.length > 2" ng-repeat="player in playersList | filter: searchFilter " ng-cloak><li><a href="#/home/{{ player.displayName }} {{ player.position }} {{ player.team }}"><font color="#16d6d6">{{ player.displayName }} {{ player.position }} {{ player.team }}</font></a></li></ul>      
 						
 					</form> 
 			    </ul>
