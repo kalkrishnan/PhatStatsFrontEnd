@@ -1,11 +1,10 @@
 'use strict';
 
-var sportsTickerDemo = angular.module('sportsTickerDemo', ['sportsTicker']);
+var sportsTickerDemo = angular.module('sportsTickerDemo', ['sportsTicker', 'chart.js']);
 
 sportsTickerDemo.controller("TickerFeedCtrl", function($scope, $http){
 
 
-	
   $scope.colors = ["#16d6d6", "#14CBCB", "#12B6B6", "#0E9898", "#0C8B8B", "#0A7575", "#085F5F", "#064B4B", "#033030"];
 	
 	if($scope.id)
@@ -44,8 +43,30 @@ sportsTickerDemo.controller("TickerFeedCtrl", function($scope, $http){
 					   if (i === 5) { break; }
 					  			
 			}
-		
+		  
+            $scope.displayInfo=true;
 			console.log($scope.info["REC"]);
+		});	
+        
+        url='http://localhost:8081/PhatStats-1.0/Service/teamPassingSchedule?team=BUF'
+		$http.get(url).then(function(response){
+		
+            console.log(response);
+            $scope.labels = [];
+            $scope.data=[];
+            var passingRanks = [];
+            
+           $.each(response.data, function(k, v) {
+    
+            $scope.labels.push(k);
+            passingRanks.push(v);
+            })
+            $scope.data.push(passingRanks);
+           console.log("passing schedule");
+		      console.log($scope.labels);
+             console.log($scope.data);
+            $scope.colours=["#16d6d6"];
+
 		});	
 
 	}else

@@ -43,10 +43,10 @@
 	 <div ng-app="sportsTickerDemo" ng-controller="TickerFeedCtrl" class="scope">
 	<div class="large-12 medium-4 columns">
 			<div class="row">
-			<div class="large-6 columns">
+			<div class="large-6 columns"  >
 	        	<div class="transbox" class="scope">
 					<h6><i><font color="#16d6d6">{{id}}</font></i></h6>
-					<table border="0">
+					<table border="0"  ng-show="displayInfo" class="ng-hide">
 					<tr bgcolor="black">
 					<th></th>
 						<th><i><font color="#16d6d6" id="stat0"></font></i></th>
@@ -87,7 +87,15 @@
 
      
     </div>
-	
+	<div class="row">
+			<div class="large-12 columns"  >
+	        	<div class="transbox"  class="scope">
+                   <canvas id="line" height="30" class="chart chart-line" chart-data="data"
+                        chart-labels="labels" chart-legend="true"  chart-colours="colours">
+                    </canvas>
+                </div>
+        </div>
+     </div>
 		 <!--sportsticker directive-->
        
             <sportsticker feed="feed" message-delay="4000" scroll-speed-factor="6.25"></sportsticker>
