@@ -48,7 +48,22 @@ sportsTickerDemo.controller("TickerFeedCtrl", function($scope, $http){
 			console.log($scope.info["REC"]);
 		});	
         
-        url='http://localhost:8081/PhatStats-1.0/Service/teamPassingSchedule?team=BUF'
+        if((id[2]=="WR" || id[2] =="QB"))
+        {
+            $scope.schedule = "Passing Defense Rankings";
+            url='http://localhost:8081/PhatStats-1.0/Service/teamPassingSchedule?team=' + id[3];
+        }
+        else if(id[2] =="RB")
+        {
+            $scope.schedule = "Running Defense Rankings";
+            url='http://localhost:8081/PhatStats-1.0/Service/teamRunningSchedule?team=' + id[3];
+        }
+        else
+        {
+            $scope.schedule = "Offense Rankings";
+            url='http://localhost:8081/PhatStats-1.0/Service/teamOffenseSchedule?team=' + id[3];
+        }
+        
 		$http.get(url).then(function(response){
 		
             console.log(response);
@@ -61,10 +76,9 @@ sportsTickerDemo.controller("TickerFeedCtrl", function($scope, $http){
             $scope.labels.push(k);
             passingRanks.push(v);
             })
+           
             $scope.data.push(passingRanks);
-           console.log("passing schedule");
-		      console.log($scope.labels);
-             console.log($scope.data);
+         
             $scope.colours=["#16d6d6"];
 
 		});	
