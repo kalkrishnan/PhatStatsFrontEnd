@@ -56,7 +56,7 @@ sportsTickerDemo.controller("TickerFeedCtrl", function($scope, $http){
         else if(id[2] =="RB")
         {
             $scope.schedule = "Running Defense Rankings";
-            url='http://localhost:8081/PhatStats-1.0/Service/teamRunningSchedule?team=' + id[3];
+            url='http://localhost:8081/PhatStats-1.0/Service/teamRushingSchedule?team=' + id[3];
         }
         else
         {
